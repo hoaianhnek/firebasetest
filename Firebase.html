@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="MyApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registation</title>
+    <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" 
+    integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+    crossorigin="anonymous">
+    <script src="angular/angular.min.js"></script>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+     <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-app.js"></script>
+
+  <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+  <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-analytics.js"></script>
+
+  <!-- Add Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-firestore.js"></script>
+  <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+   
+</head>
+<body ng-controller="myController">
+    <div id="container">
+        <h1>Welcome to My Awesome App</h1>
+        <div id="loader">Loading...</div>
+        <div id="loaded" class="hidden">
+            <div id="main">
+                <div id="user-signed-in" class="hidden">
+                    <div id="user-info">
+                        <div id="photo-container">
+                            <img id="photo" class="lazyload blur-up">
+                        </div>
+                        <div id="name"></div>
+                        <div id="email"></div>
+                        <div id="phone"></div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <p>
+                        <button id="sign-out">Sign Out</button>
+                        <button id="delete-account">Delete account</button>
+                    </p>
+                </div>
+                <div id="user-signed-out" class="hidden">
+                    <h4>You are signed out.</h4>
+                    <div id="firebaseui-spa">
+                        <h3>Single Page App mode:</h3>
+                        <div id="firebaseui-container"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    
+    // Initialize Firebase
+    var firebaseConfig = {
+    apiKey: "AIzaSyB6G-fkYdxZhEewdmFEQz3j2DIcRej13As",
+    authDomain: "fir-author-b5643.firebaseapp.com",
+    databaseURL: "https://fir-author-b5643.firebaseio.com",
+    projectId: "fir-author-b5643",
+    storageBucket: "fir-author-b5643.appspot.com",
+    messagingSenderId: "568348830402",
+    appId: "1:568348830402:web:a6cca82dd9b8f3d0b6a95b",
+    measurementId: "G-GQG0GP762W"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+<!-- Initialize Firebase -->
+<script src="jquery/jquery.min.js"></script>
+<script src="bootstrap/bootstrap.min.js"></script>
+<script src="js/App.js"></script>
+</html>
