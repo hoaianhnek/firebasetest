@@ -42,7 +42,13 @@ app.controller('myController',function($scope) {
         }]
     });
     firebase.auth().languageCode = 'it';
-    
+    var phoneNumber  = "0376206101";
+    firebase.auth().signInWithPhoneNumber(phoneNumber,appVerifier)
+        .then(function(confirmationResult) {
+            window.confirmationResult = confirmationResult;
+        }).catch(function(error) {
+            alert("error");
+        });
     
 });
 
