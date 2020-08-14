@@ -5,7 +5,7 @@ app.controller('myController',function($scope) {
     var uiConfig={
         signInOptions : [{
             // List of OAuth providers supported.
-            provider: firebase.auth.PhoneAuthProvider.PROVIDER_ID,
+            provider: Ơfirebase.auth.PhoneAuthProvider.PROVIDER_ID,
             recaptchaParameters: { 
                 type: 'image', // 'audio'
                 size: 'normal', // 'invisible' or 'compact'
