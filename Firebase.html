@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" 
     integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
     crossorigin="anonymous">
-    <script src="angular/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 
     <!-- The core Firebase JS SDK is always required and must be listed first -->
      <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
@@ -26,17 +28,11 @@
 </head>
 <body ng-controller="myController">
     <div id="container">
-        <h1>Welcome to My Awesome App</h1>
-        <div id="loader">Loading...</div>
+        <div id="loading">Loading...</div>
         <div id="loaded" class="hidden">
             <div id="main">
                 <div id="user-signed-in" class="hidden">
                     <div id="user-info">
-                        <div id="photo-container">
-                            <img id="photo" class="lazyload blur-up">
-                        </div>
-                        <div id="name"></div>
-                        <div id="email"></div>
                         <div id="phone"></div>
                         <div class="clearfix"></div>
                     </div>
@@ -48,7 +44,6 @@
                 <div id="user-signed-out" class="hidden">
                     <h4>You are signed out.</h4>
                     <div id="firebaseui-spa">
-                        <h3>Single Page App mode:</h3>
                         <div id="firebaseui-container"></div>
                     </div>
                 </div>
@@ -60,20 +55,23 @@
     
     // Initialize Firebase
     var firebaseConfig = {
-    apiKey: "AIzaSyB6G-fkYdxZhEewdmFEQz3j2DIcRej13As",
-    authDomain: "fir-author-b5643.firebaseapp.com",
-    databaseURL: "https://fir-author-b5643.firebaseio.com",
-    projectId: "fir-author-b5643",
-    storageBucket: "fir-author-b5643.appspot.com",
-    messagingSenderId: "568348830402",
-    appId: "1:568348830402:web:a6cca82dd9b8f3d0b6a95b",
-    measurementId: "G-GQG0GP762W"
+    apiKey: "AIzaSyAy2qv5yjimADkt7zltElSBoL621aqHRK8",
+    // authDomain: "fir-9d623.firebaseapp.com",
+    authDomain: "http://127.0.0.1:5501/Firebase.html",
+    databaseURL: "https://fir-9d623.firebaseio.com",
+    projectId: "fir-9d623",
+    storageBucket: "fir-9d623.appspot.com",
+    messagingSenderId: "1066810957641",
+    appId: "1:1066810957641:web:5fd27b9cf4505915830498",
+    measurementId: "G-NCJMYPHPZV"
   };
   // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
+  const config = firebase.initializeApp(firebaseConfig);
+  console.log('==============config==========',config.name);
+
+//   var defaultStorage = config.storage();
+//   var defaultFirestore = defaultStorage.fire();
 </script>
 <!-- Initialize Firebase -->
-<script src="jquery/jquery.min.js"></script>
-<script src="bootstrap/bootstrap.min.js"></script>
 <script src="js/App.js"></script>
 </html>
