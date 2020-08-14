@@ -8,23 +8,25 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" 
     integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
     crossorigin="anonymous">
+    <style>
+    </style>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 
     <!-- The core Firebase JS SDK is always required and must be listed first -->
      <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
-  <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-app.js"></script>
 
-  <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
-  <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-analytics.js"></script>
+    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-analytics.js"></script>
 
-  <!-- Add Firebase products that you want to use -->
-  <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-firestore.js"></script>
-  <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
-  <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
-   
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-firestore.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+    
 </head>
 <body ng-controller="myController">
     <div id="container">
@@ -33,6 +35,7 @@
             <div id="main">
                 <div id="user-signed-in" class="hidden">
                     <div id="user-info">
+                        <h2>Welcome User</h2>
                         <div id="phone"></div>
                         <div class="clearfix"></div>
                     </div>
@@ -66,8 +69,7 @@
     measurementId: "G-NCJMYPHPZV"
   };
   // Initialize Firebase
-  const config = firebase.initializeApp(firebaseConfig);
-  console.log('==============config==========',config.name);
+  firebase.initializeApp(firebaseConfig);
 
 //   var defaultStorage = config.storage();
 //   var defaultFirestore = defaultStorage.fire();

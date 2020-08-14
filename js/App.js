@@ -1,4 +1,3 @@
-
 var ui = new firebaseui.auth.AuthUI(firebase.auth());
 //Giao diện xác thực
 var app = angular.module('MyApp',[]);
@@ -12,22 +11,22 @@ app.controller('myController',function($scope) {
                 size: 'normal', // 'invisible' or 'compact'
                 badge: 'bottomleft' //' bottomright' or 'inline' applies to invisible.
             },
-            defaultCountry: 'VN',//đặt quốc gia mặc định
-            callbacks: {
-                signInSuccessWithAuthResult: function(user,credential, redirectUrl) {
-                    var name = authResult.name;
-                    handleSignedInUser(user);
-                    //người dùng đăng nhập thành công
-                    return false;//tiếp tục chuyển hướng trang
-                    //giao việc cho nhà phát triển xử  lý
-                },
-                uiShown: function() {
-                    // tiện ích được kết xuất
-                    // Ẩn bộ nạp
-                    document.getElementById('loader').style.display = 'none';
-                }
+            defaultCountry: 'VN'//đặt quốc gia mặc địn
+                // uiShown: function() {
+                //     // tiện ích được kết xuất
+                //     // Ẩn bộ nạp
+                //     document.getElementById('loader').style.display = 'none';
+                // }
+        }],
+        callbacks: {
+            signInSuccessWithAuthResult: function(user,credential, redirectUrl) {
+                handleSignedInUser(user.user);
+                // //người dùng đăng nhập thành công
+                return false;//tiếp tục chuyển hướng trang
+                //giao việc cho nhà phát triển xử  lý
             }
-        }]
+        },
+        signInFlow:'popup'
     };
     var handleSignedInUser = function(user) {
 
